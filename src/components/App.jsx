@@ -4,17 +4,19 @@ import TodoItems from "./ToDoData";
 
 import "../app.css"
 
-function App() {
-    console.log(TodoItems);
-    const itemComponents = TodoItems.map(item => <TodoItem key={item.id} Description={item.description} Status={item.complete} />)
-    console.log(itemComponents);
 
-    return (
-        <div className="todoitem">
-            {itemComponents}
-        </div>
-    );
+class App extends react.Component {
+    render() {
 
+        const itemComponents = TodoItems.map(item => <TodoItem key={item.id} Description={item.description} Status={item.complete} />)
+
+        return (
+            <div className="todoitem">
+                {itemComponents}
+                <p>this is class based component</p>
+            </div>
+        );
+    }
 }
 
 export default App;
